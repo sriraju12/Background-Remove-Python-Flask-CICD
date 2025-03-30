@@ -32,7 +32,7 @@ pipeline {
         }
         stage ("Trivy File Scan") {
             steps {
-                sh "/opt/homebrew/bin/trivy fs --format table -o trivy-fs-report.html ."
+                sh "trivy fs --format table -o trivy-fs-report.html ."
             }
         }
        stage('Build and Push Docker Image') {
